@@ -53,7 +53,7 @@ The correct constant BC_SLIP_WALL is used at lines 100, 130, 167, 197, 233; only
 
 ### Environment Setup
 
-[Notes on setting up your local development environment - challenges you faced, how you solved them]
+To be completed in Phase II.
 
 ### Steps to Reproduce
 
@@ -63,9 +63,9 @@ The correct constant BC_SLIP_WALL is used at lines 100, 130, 167, 197, 233; only
 
 ### Reproduction Evidence
 
-- **Commit showing reproduction:** [Link to commit in your fork]
+- **Commit showing reproduction:** [Link to commit in fork]
 - **Screenshots/logs:** [If applicable]
-- **My findings:** [What you discovered during reproduction]
+- **My findings:** [What I discovered during reproduction]
 
 ---
 
@@ -73,11 +73,11 @@ The correct constant BC_SLIP_WALL is used at lines 100, 130, 167, 197, 233; only
 
 ### Analysis
 
-[Your analysis of the root cause - what's causing the issue?]
+[My analysis of the root cause - what's causing the issue?]
 
 ### Proposed Solution
 
-[High-level description of your fix approach]
+[High-level description of my fix approach]
 
 ### Implementation Plan
 
@@ -92,11 +92,11 @@ Using UMPIRE framework (adapted):
 2. [Add function Z]
 3. [Update tests]
 
-**Implement:** [Link to your branch/commits as you work]
+**Implement:** [Link to my branch / commits as I work]
 
 **Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
 
-**Evaluate:** [How will you verify it works?]
+**Evaluate:** [How will I verify it works?]
 
 ---
 
@@ -115,7 +115,7 @@ Using UMPIRE framework (adapted):
 
 ### Manual Testing
 
-[What you tested manually and results]
+[What I tested manually and results]
 
 ---
 
@@ -123,17 +123,17 @@ Using UMPIRE framework (adapted):
 
 ### Week [X] Progress
 
-[What you built this week, challenges faced, decisions made]
+[What I built this week, challenges faced, decisions made]
 
 ### Week [Y] Progress
 
-[Continue documenting as you work]
+[Continue documenting as I work]
 
 ### Code Changes
 
 - **Files modified:** [List]
 - **Key commits:** [Links to important commits]
-- **Approach decisions:** [Why you chose certain approaches]
+- **Approach decisions:** [Why I chose certain approaches]
 
 ---
 
@@ -155,15 +155,15 @@ Using UMPIRE framework (adapted):
 
 ### Technical Skills Gained
 
-[What you learned technically]
+[What I learned technically]
 
 ### Challenges Overcome
 
-[What was hard and how you solved it]
+[What was hard and how I solved it]
 
 ### What I'd Do Differently Next Time
 
-[Reflection on your process]
+[Reflection on my process]
 
 ---
 
