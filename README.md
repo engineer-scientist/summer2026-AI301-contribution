@@ -6,7 +6,7 @@ For CodePath's course AI301 "AI Open Source Capstone".
 **Contribution Number:** 1498  
 **Student:** Sarthak Sharma  
 **Issue:** https://github.com/MFlowCode/MFC/issues/1498  
-**Status:** Phase I, in progress.
+**Status:** Phase I completed.
 
 ---
 
