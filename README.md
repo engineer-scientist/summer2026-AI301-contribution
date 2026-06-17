@@ -54,7 +54,9 @@ The correct constant BC_SLIP_WALL is used at lines 100, 130, 167, 197, 233; only
 
 ### Environment Setup
 
-Simple environment like Visual Studio code is sufficient for this issue.
+Simple environment like Visual Studio Code is sufficient for this issue.
+
+<img width="1920" height="1080" alt="Screenshot 2026-06-16 225758" src="https://github.com/user-attachments/assets/dcfff258-0314-499b-b980-93b9b0eb4a11" />
 
 ### Steps to Reproduce
 
