@@ -6,7 +6,7 @@ For CodePath's course AI301 "AI Open Source Capstone".
 **Contribution Number:** 1498  
 **Student:** Sarthak Sharma  
 **Issue:** https://github.com/MFlowCode/MFC/issues/1498  
-**Status:** Phase I completed.
+**Status:** Phase II completed.
 
 ---
 
@@ -74,6 +74,12 @@ Search and correct the mis-spelled variables in the code.
 ### Implementation Plan
 
 Will be working on Visual studio Code for easy searching and editing of the codebase.
+
+Examples given in the repository readme: 
+1. HardcodedDellacation → HardcodedDeallocation
+2. BC_SlIP_WALL → BC_SLIP_WALL at src/common/m_boundary_common.fpp:263
+3. tangental → tangential
+4. fite_path_dest → file_path_dest
 
 ---
 
