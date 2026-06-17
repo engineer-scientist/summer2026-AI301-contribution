@@ -53,19 +53,11 @@ The correct constant BC_SLIP_WALL is used at lines 100, 130, 167, 197, 233; only
 
 ### Environment Setup
 
-To be completed in Phase II.
+Simple environment like Visual Studio code is sufficient for this issue.
 
 ### Steps to Reproduce
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
-
-### Reproduction Evidence
-
-- **Commit showing reproduction:** [Link to commit in fork]
-- **Screenshots/logs:** [If applicable]
-- **My findings:** [What I discovered during reproduction]
+The issue is "internal spelling typos", so there is no effect on the software functionality because of it. We just have to rename some mis-spelled variables and ensure that there is consistency throughout the codebase for what those variables point to.
 
 ---
 
@@ -73,30 +65,15 @@ To be completed in Phase II.
 
 ### Analysis
 
-[My analysis of the root cause - what's causing the issue?]
+The issue is caused due to spelling errors in cvertain variables of the code. 
 
 ### Proposed Solution
 
-[High-level description of my fix approach]
+Search and correct the mis-spelled variables in the code.
 
 ### Implementation Plan
 
-Using UMPIRE framework (adapted):
-
-**Understand:** [Restate the problem]
-
-**Match:** [What similar patterns/solutions exist in the codebase?]
-
-**Plan:** [Step-by-step implementation plan]
-1. [Modify file X to do Y]
-2. [Add function Z]
-3. [Update tests]
-
-**Implement:** [Link to my branch / commits as I work]
-
-**Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
-
-**Evaluate:** [How will I verify it works?]
+Will be working on Visual studio Code for easy searching and editing of the codebase.
 
 ---
 
