@@ -90,14 +90,11 @@ Examples given in the repository readme:
 
 ### Unit Tests
 
-- [ ] Test case 1: [Description]
-- [ ] Test case 2: [Description]
-- [ ] Test case 3: [Description]
+- [ ] Test case: Correct the spelling errors and run the individual functions to check if the are working properly.
 
 ### Integration Tests
 
-- [ ] Integration scenario 1
-- [ ] Integration scenario 2
+- [ ] If all errors have been corrected, then run the simulation software for an example problem to make sure that the various parts have itegrated properly and the whole software is working correctly.
 
 ### Manual Testing
 
@@ -107,13 +104,7 @@ Examples given in the repository readme:
 
 ## Implementation Notes
 
-### Week [X] Progress
-
-[What I built this week, challenges faced, decisions made]
-
-### Week [Y] Progress
-
-[Continue documenting as I work]
+Corrected spelling errors in the code.
 
 ### Code Changes
 
