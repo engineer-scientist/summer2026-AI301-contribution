@@ -116,7 +116,7 @@ Verified each fix using `grep -rn <old_spelling> src/` in Git Bash after editing
 
 ## Implementation Notes
 
-### Week 1 Progress (Phase II–III)
+### Progress (Phase II–III)
 
 **What I built:**
 - Forked MFlowCode/MFC to https://github.com/engineer-scientist/Multiphase-Flow-Code
