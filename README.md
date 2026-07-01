@@ -47,6 +47,8 @@ All identifier names in the codebase should be spelled correctly so that `grep` 
 
 No special build environment was needed for this issue since the changes are purely cosmetic identifier renames. I used Visual Studio Code on Windows 10 to search and edit the source files, and Git Bash (included with Git for Windows) to run all `git` commands.
 
+<img width="1920" height="1080" alt="Screenshot 2026-06-16 225758" src="https://github.com/user-attachments/assets/dcfff258-0314-499b-b980-93b9b0eb4a11" />
+
 One challenge encountered: PowerShell (the default terminal in Visual Studio) does not have `grep`. Switched to Git Bash to use Unix-style commands.
 
 ### Steps to Reproduce
