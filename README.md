@@ -165,7 +165,7 @@ Verified each fix using `grep -rn <old_spelling> src/` in Git Bash after editing
 Corrects five misspelled identifiers across the codebase. Three of these (BC_SlIP_WALL, fite_path_dest, lb) were previously addressed in PR #1516 which was closed without merging. Also fixes a pre-existing documentation typo (patche(s) → patch(es)) caught by the CI spell checker. No logic changes — purely identifier renames. Closes #1498.
 
 **Maintainer Feedback:**
-- *(To be updated as feedback is received)*
+- 2026-07-02: Maintainer marked PR as draft due to merge conflictin docs/documentation/case.md. Resolved by accepting upstream version ("patches") and converted PR back to ready for review.
 
 **Status:** Awaiting review
 
