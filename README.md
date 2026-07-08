@@ -166,8 +166,9 @@ Corrects five misspelled identifiers across the codebase. Three of these (BC_SlI
 
 **Maintainer Feedback:**
 - 2026-07-02: Maintainer marked PR as draft due to merge conflictin docs/documentation/case.md. Resolved by accepting upstream version ("patches") and converted PR back to ready for review.
+- 2026-07-05: PR merged by sbryngelson (commit 0506969) into MFlowCode:master. 81 of 82 checks passed. The one failing check was a corrupted pandas cache on the Frontier HPC runner, unrelated to the PR changes.
 
-**Status:** Awaiting review
+**Status:** Merged ✅
 
 ---
 
@@ -175,11 +176,11 @@ Corrects five misspelled identifiers across the codebase. Three of these (BC_SlI
 
 ### Technical Skills Gained
 
-- Learned the open source contribution workflow end-to-end: fork → branch → commit → PR → CI → merge conflict resolution → CI fix → iterate
-- Learned to read CI logs to diagnose failures and distinguish failures caused by my changes from pre-existing issues
-- Learned how to resolve a merge conflict when an upstream refactor supersedes part of a branch's changes
-- Learned Git Bash as a Unix-compatible terminal on Windows for `grep`, `git`, and related tools
-- Gained familiarity with Fortran `.fpp` source files (Fypp preprocessor syntax) and Python toolchain scripts
+- Learned the open source contribution workflow end-to-end: fork → branch → commit → PR → CI → merge conflict resolution → CI fix → iterate. 
+- Learned to read CI logs to diagnose failures and distinguish failures caused by my changes from pre-existing issues. 
+- Learned how to resolve a merge conflict when an upstream refactor supersedes part of a branch's changes. 
+- Learned Git Bash as a Unix-compatible terminal on Windows for `grep`, `git`, and related tools. 
+- Gained familiarity with Fortran `.fpp` source files (Fypp preprocessor syntax) and Python toolchain scripts. 
 
 ### Challenges Overcome
 
@@ -189,9 +190,9 @@ Corrects five misspelled identifiers across the codebase. Three of these (BC_SlI
 
 ### What I'd Do Differently Next Time
 
-- Set up Git Bash as the default terminal before starting, to avoid running into PowerShell incompatibilities mid-workflow
-- Run `git fetch upstream && git rebase upstream/master` before opening the PR to catch potential conflicts earlier
-- Read the CI workflow files (`.github/workflows/`) before pushing, to understand what checks will run and what they require
+- Set up Git Bash as the default terminal before starting, to avoid running into PowerShell incompatibilities mid-workflow. 
+- Run `git fetch upstream && git rebase upstream/master` before opening the PR to catch potential conflicts earlier. 
+- Read the CI workflow files (`.github/workflows/`) before pushing, to understand what checks will run and what they require. 
 
 ---
 
