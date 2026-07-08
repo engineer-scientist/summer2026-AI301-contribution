@@ -206,27 +206,27 @@ Corrects five misspelled identifiers across the codebase. Three of these (BC_SlI
 - [GitHub Pull Request from a Fork — Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
 
 
-# Contribution 2: Remove `test --only` case sensitivity
+# Contribution 2: Deallocate single-precision output arrays (`q_sf_s` family) in post_process
 
 **Contribution Number:** 2, 
 **Student:** Sarthak Sharma, 
-**Issue:** https://github.com/MFlowCode/MFC/issues/1533, 
-**Status:** Phase I Complete. 
+**Issue:** https://github.com/MFlowCode/MFC/issues/1569, 
+**Status:** Phase I Complete.
 
 ---
 
 ## Why I Chose This Issue
 
-MFC's test runner lets you filter which cases run with `./mfc.sh test --only <label>`, but the label matching in `toolchain/mfc/test/test.py` is case-sensitive. Because test labels are capitalized inconsistently across the suite, a user has to match capitalization exactly or the filter silently returns nothing — the friction this issue asks to remove by making `--only` matching case-insensitive. It matters because `--only` is one of the most-used commands when iterating on a single test, and a filter that quietly matches zero cases wastes developer time and erodes trust in the tooling.
+MFC's post_process step leaks memory on every run that uses single-precision output. The single-precision output arrays `q_sf_s`, `q_root_sf_s`, and `cyl_q_sf_s` are allocated when `precision == precision_single` (in `src/post_process/m_data_output.fpp`), but the module's finalizer, `s_finalize_data_output_module`, only deallocates the working-precision triple — so the single-precision arrays are never freed. It matters because post_process is run routinely to convert simulation output, and a leak on every single-precision run wastes memory and can matter for large jobs or repeated invocations. This is a real, maintainer-tracked bug with a clearly bounded fix: free the three single-precision arrays in the finalizer under the same condition that allocates them.
 
 I chose this issue because:
 
-1. It lives in the Python test toolchain, which is where part of my first merged contribution (#1623) also lived, so I already have MFC built and the toolchain environment working and can start Phase II immediately.
-2. It has a clear, documented definition of "done": a previous attempt (PR #1621) was closed incomplete, and its review thread (GitHub Copilot plus the maintainer) spells out exactly what a correct fix must cover, giving me concrete acceptance criteria to plan against.
-3. It is genuinely wanted — the maintainer noted he will fix it himself if no one does — so a complete PR has a strong path to merge.
-4. I want to strengthen my skills in defensive CLI/tooling design and in reading and building on a prior contributor's closed PR, which is a core open-source skill.
+1. It sits in the Fortran solver/post_process source, and my first merged contribution (#1623) already involved this codebase and toolchain, so I have MFC building locally and can move straight into Phase II.
+2. It has an unambiguous definition of "done" and a fully documented mechanism: the maintainer's report names the allocation sites and the finalizer that omits the matching deallocations, so I can plan against concrete acceptance criteria rather than a vague goal.
+3. It is genuinely wanted and already decided — the maintainer labels it a tracked cleanup, so there is no pending design or "is this a real issue" question to resolve before I can start.
+4. It is a real defect (a memory leak) rather than a cosmetic change, which is a deliberate step up from my first contribution while staying well within a bounded, single-file-area scope. It also builds directly on the allocate/deallocate-pairing theme I worked with in my first issue.
 
-From studying issue #1533 and the closed PR #1621, I understand my contribution needs to go beyond the one-line lowercase change that was attempted. A correct fix must: (1) normalize label matching once using `casefold()` into a single precomputed set rather than rebuilding it per label; (2) make the downstream "convergence" opt-in check case-insensitive as well, so that a lowercase `--only convergence` does not silently filter out every convergence case and run zero tests — the high-severity problem the reviewer flagged; and (3) normalize UUID terms so that `--only <uuid>` with lowercase hex does not mismatch. I have left a comment on the issue introducing myself, noting my prior MFC contribution, and outlining this plan.
+From studying issue #1569, I understand my contribution needs to: (1) locate every allocation in the `q_sf_s` family that is guarded by the single-precision path in `m_data_output.fpp`; (2) add the matching deallocations to `s_finalize_data_output_module`, guarded by the same `precision == precision_single` condition so the free path mirrors the allocation path exactly; and (3) verify no single-precision output array is left unfreed and that working-precision runs are unaffected. I plan to confirm the leak first (for example, with a memory/leak-sanitizer build or an allocate/deallocate audit on a `--single` precision post_process run) and post that evidence before changing code. I have left a comment on the issue introducing myself, noting my prior MFC contribution, and outlining this plan.
 
 ---
 
