@@ -208,10 +208,10 @@ Corrects five misspelled identifiers across the codebase. Three of these (BC_SlI
 
 # Contribution 2: Remove `test --only` case sensitivity
 
-**Contribution Number:** 2
-**Student:** Sarthak Sharma
-**Issue:** https://github.com/MFlowCode/MFC/issues/1533
-**Status:** Phase I Complete
+**Contribution Number:** 2, 
+**Student:** Sarthak Sharma, 
+**Issue:** https://github.com/MFlowCode/MFC/issues/1533, 
+**Status:** Phase I Complete. 
 
 ---
 
