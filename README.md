@@ -204,3 +204,175 @@ Corrects five misspelled identifiers across the codebase. Three of these (BC_SlI
 - [MFC Developer Guide / Contributing](https://mflowcode.github.io/documentation/contributing.html)
 - [MFC CONTRIBUTING.md](https://github.com/MFlowCode/MFC/blob/master/CONTRIBUTING.md)
 - [GitHub Pull Request from a Fork — Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
+
+-----------------------------------------------------------------------------------------------------
+
+# Contribution 2: Remove `test --only` case sensitivity
+
+**Contribution Number:** 2
+**Student:** Sarthak Sharma
+**Issue:** https://github.com/MFlowCode/MFC/issues/1533
+**Status:** Phase I Complete
+
+---
+
+## Why I Chose This Issue
+
+MFC's test runner lets you filter which cases run with `./mfc.sh test --only <label>`, but the label matching in `toolchain/mfc/test/test.py` is case-sensitive. Because test labels are capitalized inconsistently across the suite, a user has to match capitalization exactly or the filter silently returns nothing — the friction this issue asks to remove by making `--only` matching case-insensitive. It matters because `--only` is one of the most-used commands when iterating on a single test, and a filter that quietly matches zero cases wastes developer time and erodes trust in the tooling.
+
+I chose this issue because:
+
+1. It lives in the Python test toolchain, which is where part of my first merged contribution (#1623) also lived, so I already have MFC built and the toolchain environment working and can start Phase II immediately.
+2. It has a clear, documented definition of "done": a previous attempt (PR #1621) was closed incomplete, and its review thread (GitHub Copilot plus the maintainer) spells out exactly what a correct fix must cover, giving me concrete acceptance criteria to plan against.
+3. It is genuinely wanted — the maintainer noted he will fix it himself if no one does — so a complete PR has a strong path to merge.
+4. I want to strengthen my skills in defensive CLI/tooling design and in reading and building on a prior contributor's closed PR, which is a core open-source skill.
+
+From studying issue #1533 and the closed PR #1621, I understand my contribution needs to go beyond the one-line lowercase change that was attempted. A correct fix must: (1) normalize label matching once using `casefold()` into a single precomputed set rather than rebuilding it per label; (2) make the downstream "convergence" opt-in check case-insensitive as well, so that a lowercase `--only convergence` does not silently filter out every convergence case and run zero tests — the high-severity problem the reviewer flagged; and (3) normalize UUID terms so that `--only <uuid>` with lowercase hex does not mismatch. I have left a comment on the issue introducing myself, noting my prior MFC contribution, and outlining this plan.
+
+---
+
+## Understanding the Issue
+
+### Problem Description
+
+[Phase II — In your own words, what's broken or missing?]
+
+### Expected Behavior
+
+[Phase II — What should happen?]
+
+### Current Behavior
+
+[Phase II — What actually happens?]
+
+### Affected Components
+
+[Phase II — Which parts of the codebase are involved?]
+
+---
+
+## Reproduction Process
+
+### Environment Setup
+
+[Phase II — Notes on setting up your local development environment: challenges you faced, how you solved them]
+
+### Steps to Reproduce
+
+1. [Step 1]
+2. [Step 2]
+3. [Observed result]
+
+### Reproduction Evidence
+
+* **Commit showing reproduction:** [Link to commit in your fork]
+* **Screenshots/logs:** [If applicable]
+* **My findings:** [What you discovered during reproduction]
+
+---
+
+## Solution Approach
+
+### Analysis
+
+[Phase II — Your analysis of the root cause]
+
+### Proposed Solution
+
+[Phase II — High-level description of your fix approach]
+
+### Implementation Plan
+
+Using UMPIRE framework (adapted):
+
+**Understand:** [Restate the problem]
+
+**Match:** [What similar patterns/solutions exist in the codebase?]
+
+**Plan:** [Step-by-step implementation plan]
+
+1. [Modify file X to do Y]
+2. [Add function Z]
+3. [Update tests]
+
+**Implement:** [Link to your branch/commits as you work]
+
+**Review:** [Self-review checklist: does it follow the project's contribution guidelines?]
+
+**Evaluate:** [How will you verify it works?]
+
+---
+
+## Testing Strategy
+
+### Unit Tests
+
+* [ ] Test case 1: [Description]
+* [ ] Test case 2: [Description]
+* [ ] Test case 3: [Description]
+
+### Integration Tests
+
+* [ ] Integration scenario 1
+* [ ] Integration scenario 2
+
+### Manual Testing
+
+[What you tested manually and results]
+
+---
+
+## Implementation Notes
+
+### Week [X] Progress
+
+[What you built this week, challenges faced, decisions made]
+
+### Week [Y] Progress
+
+[Continue documenting as you work]
+
+### Code Changes
+
+* **Files modified:** [List]
+* **Key commits:** [Links to important commits]
+* **Approach decisions:** [Why you chose certain approaches]
+
+---
+
+## Pull Request
+
+**PR Link:** [GitHub PR URL when submitted]
+
+**PR Description:** [Draft or final PR description — much of the content above can be adapted]
+
+**Maintainer Feedback:**
+
+* [Date]: [Summary of feedback received]
+* [Date]: [How you addressed it]
+
+**Status:** [Awaiting review / Iterating / Approved / Merged]
+
+---
+
+## Learnings & Reflections
+
+### Technical Skills Gained
+
+[What you learned technically]
+
+### Challenges Overcome
+
+[What was hard and how you solved it]
+
+### What I'd Do Differently Next Time
+
+[Reflection on your process]
+
+---
+
+## Resources Used
+
+* [Link to helpful documentation]
+* [Tutorial or Stack Overflow post that helped]
+* [GitHub issues or discussions that helped]
