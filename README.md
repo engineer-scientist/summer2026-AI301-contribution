@@ -184,7 +184,7 @@ Corrects five misspelled identifiers across the codebase. Three of these (BC_SlI
 
 ### Challenges Overcome
 
-- **Merge conflict:** An upstream refactor landed while my PR was open, eliminating the `BC_SlIP_WALL` occurrence I had fixed. Resolved by accepting the incoming change and updating the PR description to reflect that 4 (not 5) typos were fixed by my commits.
+- **Merge conflict:** An upstream refactor landed while my PR was open, eliminating the `BC_SlIP_WALL` occurrence that I had fixed. Resolved by accepting the incoming change and updating the PR description to reflect that 4 (not 5) typos were fixed by my commits.
 - **CI spell check failure:** The spell checker flagged `patche(s)` in a documentation file unrelated to my changes. Rather than ignoring it, I fixed it as part of the PR — turning an unexpected CI failure into an additional contribution.
 - **Windows environment friction:** Several standard Unix tools (`grep`, `sed`, Python in PATH) were unavailable in the default PowerShell terminal. Solved by using Git Bash for all command-line work.
 
@@ -198,6 +198,7 @@ Corrects five misspelled identifiers across the codebase. Three of these (BC_SlI
 
 ## Resources Used
 
+- [Claude AI from Anthropic.](https://www.claude.ai) 
 - [MFlowCode/MFC Issue #1498](https://github.com/MFlowCode/MFC/issues/1498)
 - [Closed PR #1516 (partial fix reference)](https://github.com/MFlowCode/MFC/pull/1516)
 - [MFC Developer Guide / Contributing](https://mflowcode.github.io/documentation/contributing.html)
