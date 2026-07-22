@@ -1,9 +1,16 @@
 # Contribution 2: Validator error message references non-existent parameter `bc_{dir}%Tw_out` (should be `Twall_out`)
 
-**Contribution Number:** 2
-**Student:** Sarthak Sharma
-**Issue:** [#1480 — MFlowCode/MFC](https://github.com/MFlowCode/MFC/issues/1480)
-**Status:** Phase III (Pull Request submitted) — In Progress
+**Contribution Number:** 2, 
+
+**Student:** Sarthak Sharma, 
+
+**Issue:** [#1480 — MFlowCode/MFC](https://github.com/MFlowCode/MFC/issues/1480), 
+
+**Fork:** https://github.com/engineer-scientist/Multiphase-Flow-Code, 
+
+**Pull request:** https://github.com/MFlowCode/MFC/pull/1666, 
+
+**Status:** Phase III (Pull Request submitted) — In Progress.
 
 ---
 
